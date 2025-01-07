@@ -1,15 +1,28 @@
 package org.example.model;
 
-public class TicketRecord {
-    private final String coachNumber;
-    private final String berthNumber;
-    private Person person;
-    private final double price;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-    public TicketRecord(String coachNumber, String berthNumber, Person person, double price) {
-        this.coachNumber = coachNumber;
-        this.berthNumber = berthNumber;
-        this.person = person;
-        this.price = price;
-    }
+@Entity
+@Table(name = "ticket_record")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class TicketRecord {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String coachNumber;
+    private String berthNumber;
+    private String name;
+    private int age;
+    private String gender;
+    private int number;
+    private String email;
+    private double price;
 }
