@@ -22,6 +22,6 @@ public class BookingController {
     @PostMapping("/book")
     @ResponseStatus(HttpStatus.CREATED)
     public String bookTicket(@RequestBody BookingRequest bookingRequest) {
-        return "e";
+        return "book";
     }
 }
