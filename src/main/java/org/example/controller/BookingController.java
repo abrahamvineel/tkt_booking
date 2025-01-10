@@ -15,13 +15,13 @@ public class BookingController {
 
     @PostMapping("/lock")
     @ResponseStatus(HttpStatus.CREATED)
-    public String lockTicket(@RequestBody BookingRequest bookingRequest) {
-        return "e";
+    public void lockTicket(@RequestBody BookingRequest bookingRequest) {
+        bookingService.lockTicket(bookingRequest);
     }
 
     @PostMapping("/book")
     @ResponseStatus(HttpStatus.CREATED)
-    public String bookTicket(@RequestBody BookingRequest bookingRequest) {
-        return "book";
+    public void bookTicket(@RequestBody BookingRequest bookingRequest) {
+        bookingService.bookTicket(bookingRequest);
     }
 }

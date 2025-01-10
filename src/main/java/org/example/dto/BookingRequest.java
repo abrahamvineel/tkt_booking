@@ -17,4 +17,5 @@ public class BookingRequest {
     private String sourceStation;
     private String destinationStation;
     private List<TicketRecord> ticketRecords;
+    private int userId;
 }
