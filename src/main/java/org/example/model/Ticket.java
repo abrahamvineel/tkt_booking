@@ -1,16 +1,24 @@
 package org.example.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
 @Entity
 @Table(name = "ticket")
+@AllArgsConstructor
+@NoArgsConstructor
+@Setter
+@Getter
 public class Ticket {
     @Id
-    private final long pnrNumber;
-    private final String source;
-    private final String destination;
+    private long pnrNumber;
+    private String source;
+    private String destination;
     @OneToMany(cascade = CascadeType.ALL)
     private List<TicketRecord> ticketRecords;
 
